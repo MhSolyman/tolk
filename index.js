@@ -92,8 +92,14 @@ const run = async () => {
         app.get('/likes',async(req,res)=>{
             const query = {};
             const result = await likeCullection.find(query).toArray();
-           
+            
+            console.log(result.length)
+            
+            
             res.send(result)
+            
+           
+     
         })
 
 
