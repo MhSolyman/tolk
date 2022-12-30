@@ -28,6 +28,11 @@ const run = async () => {
 
 
         });
+        app.get('/tpost',async (req, res) => {
+            const query = {};
+            const result = await postsCollection.find(query).limit(3).toArray();
+            res.send(result)
+        })
         app.get('/post', async (req, res) => {
             const query = {};
             const result = await postsCollection.find(query).toArray();
@@ -92,7 +97,7 @@ const run = async () => {
         app.get('/likes',async(req,res)=>{
             const query = {};
             const result = await likeCullection.find(query).toArray();
-            
+
             console.log(result.length)
             
             
